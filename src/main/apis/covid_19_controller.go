@@ -1,8 +1,8 @@
 package apis
 
 import (
-	"covid-19/src/main/dtos"
-	"covid-19/src/main/service/orch"
+	"covid19-service/src/main/dtos"
+	"covid19-service/src/main/service/orch"
 	"encoding/json"
 	"github.com/dunzoit/froyo/logger"
 	"github.com/gorilla/mux"

@@ -1,9 +1,9 @@
 package orch
 
 import (
-	"covid-19/src/main/client"
-	"covid-19/src/main/dtos"
-	"covid-19/src/main/service"
+	"covid19-service/src/main/client"
+	"covid19-service/src/main/dtos"
+	"covid19-service/src/main/service"
 	"strings"
 )
 

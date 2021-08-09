@@ -1,8 +1,8 @@
 package server
 
 import (
-	"covid-19/src/main/config"
-	"covid-19/src/main/server/handler"
+	"covid19-service/src/main/config"
+	"covid19-service/src/main/server/handler"
 	"net/http"
 	"os"
 	"time"

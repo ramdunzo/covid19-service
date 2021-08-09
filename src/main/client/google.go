@@ -1,7 +1,7 @@
 package client
 
 import (
-	"covid-19/src/main/dtos"
+	"covid19-service/src/main/dtos"
 	"encoding/json"
 	"github.com/dunzoit/froyo/logger"
 	"io/ioutil"

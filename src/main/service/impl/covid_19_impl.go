@@ -1,10 +1,10 @@
 package impl
 
 import (
-	"covid-19/src/main/dal/models"
-	"covid-19/src/main/dal/repos"
-	"covid-19/src/main/dtos"
-	"covid-19/src/main/service"
+	"covid19-service/src/main/dal/models"
+	"covid19-service/src/main/dal/repos"
+	"covid19-service/src/main/dtos"
+	"covid19-service/src/main/service"
 	"github.com/dunzoit/froyo/logger"
 	"github.com/google/uuid"
 	"strings"

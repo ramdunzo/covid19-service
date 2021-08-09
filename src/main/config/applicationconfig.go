@@ -1,11 +1,11 @@
 package config
 
 import (
-	"covid-19/src/main/apis"
-	"covid-19/src/main/client"
-	"covid-19/src/main/dal/repos"
-	"covid-19/src/main/service/impl"
-	"covid-19/src/main/service/orch"
+	"covid19-service/src/main/apis"
+	"covid19-service/src/main/client"
+	"covid19-service/src/main/dal/repos"
+	"covid19-service/src/main/service/impl"
+	"covid19-service/src/main/service/orch"
 	"github.com/gorilla/mux"
 )
 
