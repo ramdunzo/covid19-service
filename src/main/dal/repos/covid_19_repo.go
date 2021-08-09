@@ -29,9 +29,9 @@ func (repo *Covid19Repo) BulkInsert(covid19 []*models.Covid19) ([]*models.Covid1
 
 }
 
-func (repo *Covid19Repo) UpsertByPlace(covid19 *models.Covid19) error {
+func (repo *Covid19Repo) UpsertById(covid19 *models.Covid19) error {
 	opts := options.Update().SetUpsert(true)
-	filter := bson.D{{"place_name", covid19.PlaceName}}
+	filter := bson.D{{"_id", covid19.Id}}
 	update := bson.M{
 		"$set": covid19,
 	}

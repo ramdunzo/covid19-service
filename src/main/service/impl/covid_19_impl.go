@@ -6,7 +6,6 @@ import (
 	"covid19-service/src/main/dtos"
 	"covid19-service/src/main/service"
 	"github.com/dunzoit/froyo/logger"
-	"github.com/google/uuid"
 	"strings"
 )
 
@@ -22,17 +21,19 @@ func (service *Covid19Impl) UpdateCovid19Case(covid19Case *dtos.CovidCase) error
 	covid19DataState := covid19Case.Data.Regional
 	//var data []*models.Covid19
 	for _, state := range covid19DataState {
-		id := strings.Replace(uuid.New().String(), "-", "", -1)
+		id := strings.Replace(state.StateName, " ", "", -1)
 		covid19CaseModel := models.NewCovid19(id, state.StateName, covid19Case.LastOriginUpdate, state.Deaths, state.Recovered, state.TotalConfirmed)
 		//data = append(data, covid19CaseModel)
-		err := service.Covid19Repo.UpsertByPlace(covid19CaseModel)
-		logger.Error("[Covid19Impl] UpdateCovid19Case error : ", err)
-		return err
+		err := service.Covid19Repo.UpsertById(covid19CaseModel)
+		if err != nil {
+			logger.Error("[Covid19Impl] UpdateCovid19Case error : ", err)
+			return err
+		}
 	}
 	covid19CaseIndia := covid19Case.Data.Summary
-	id := strings.Replace(uuid.New().String(), "-", "", -1)
+	id := "India"
 	covid19CaseModel := models.NewCovid19(id, "India", covid19Case.LastOriginUpdate, covid19CaseIndia.Deaths, covid19CaseIndia.Recovered, covid19CaseIndia.Total)
-	err := service.Covid19Repo.UpsertByPlace(covid19CaseModel)
+	err := service.Covid19Repo.UpsertById(covid19CaseModel)
 	//data = append(data, covid19CaseModel)
 	//_, err := service.Covid19Repo.BulkInsert(data)
 	return err
