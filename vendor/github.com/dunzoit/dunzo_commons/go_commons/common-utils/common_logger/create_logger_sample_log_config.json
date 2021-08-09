@@ -1,0 +1,26 @@
+{
+    "level": 0,
+    "global": [
+      {
+        "field": "correlation-id",
+        "source": {
+          "type": "HEADER",
+          "key": "correlation-id"
+        }
+      }
+    ],
+    "apis": [
+      {
+        "path": "/test",
+        "method": "POST",
+        "fields": [
+          {
+            "field": "userid",
+            "source": {
+              "type": "HEADER",
+              "key": "userid"
+            }
+          }]
+      }
+    ]
+  }
