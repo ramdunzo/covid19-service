@@ -35,9 +35,9 @@ func (controller *Covid19Controller) UpdateCovidCase(w http.ResponseWriter, r *h
 func (controller *Covid19Controller) GetCovidCase(w http.ResponseWriter, r *http.Request) {
 	logger.Info("[Covid19Controller] GetCovidCase request received *****")
 	reqBody, _ := ioutil.ReadAll(r.Body)
-	var covid19CaseByPlaceRequest dtos.GetCovid19CaseByPlaceRequest
-	_ = json.Unmarshal(reqBody, &covid19CaseByPlaceRequest)
-	response, err := controller.covid19Orch.GetCovid19Data(covid19CaseByPlaceRequest)
+	var request dtos.GetCovid19CaseByPlaceRequest
+	_ = json.Unmarshal(reqBody, &request)
+	response, err := controller.covid19Orch.GetCovid19DataCache(request.Lat, request.Lng)
 	if err != nil {
 		_ = json.NewEncoder(w).Encode(err)
 	}

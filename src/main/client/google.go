@@ -50,8 +50,8 @@ func (gc *GoogleClient) GetIndiaCovidCases() (*dtos.CovidCase, error) {
 	return nil, err
 }
 
-func (gc *GoogleClient) GetStateNameFromLatLng(lat string, lng string, apiKey string) (*dtos.ReverseGeoCoding, error) {
-	url := "https://revgeocode.search.hereapi.com/v1/revgeocode?at=" + lat + "," + lng + "&apikey=" + apiKey
+func (gc *GoogleClient) GetStateNameFromLatLng(lat string, lng string) (*dtos.ReverseGeoCoding, error) {
+	url := "https://revgeocode.search.hereapi.com/v1/revgeocode?at=" + lat + "," + lng + "&apikey=bAnCF7fp5ZJmzfS61NNEJrqfX8eU59Lqy_n8ZK_Jl1I"
 	req, err := http.NewRequest("GET", url, nil)
 	if err == nil {
 		var res *http.Response

@@ -3,7 +3,6 @@ package dtos
 type GetCovid19CaseByPlaceRequest struct {
 	Lat    string `json:"lat"`
 	Lng    string `json:"lng"`
-	ApiKey string `json:"api_key"`
 }
 type GetCovid19CaseByPlaceResponse struct {
 	Place              string `json:"place"`
